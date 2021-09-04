@@ -1,0 +1,18 @@
+# put me to ~/.dbt/profiles.yml
+
+config:
+  send_anonymous_usage_stats: false
+  partial_parse: true
+
+clickhouse_starschema:
+  outputs:
+    dev:
+      type: clickhouse
+      schema: dbt
+      host: <host>.mdb.yandexcloud.net
+      port: 9440
+      user: dbt
+      password: <password>
+      secure: True
+      threads: 4
+  target: dev

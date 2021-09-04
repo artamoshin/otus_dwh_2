@@ -1,0 +1,2 @@
+dbt==0.20.1
+dbt-clickhouse==0.20.1

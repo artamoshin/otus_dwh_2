@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: dbgen
+    schema: dbt
+    tags: ["dbgen"]
+    loader: S3
+    description: "External S3 source tables created by init_s3_sources macro"
+    tables:
+      - name: customer
+        identifier: src_customer
+      - name: lineorder
+        identifier: src_lineorder
+      - name: part
+        identifier: src_part
+      - name: supplier
+        identifier: src_supplier
