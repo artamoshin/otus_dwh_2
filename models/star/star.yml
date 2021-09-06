@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: lineorder_flat
+    columns:
+      - name: LO_ORDERKEY
+      - name: LO_LINENUMBER
+      - name: LO_CUSTKEY
+      - name: LO_PARTKEY
+      - name: LO_SUPPKEY
+      - name: LO_ORDERDATE
+      - name: LO_ORDERPRIORITY
+      - name: LO_SHIPPRIORITY
+      - name: LO_QUANTITY
+      - name: LO_EXTENDEDPRICE
+      - name: LO_ORDTOTALPRICE
+      - name: LO_DISCOUNT
+      - name: LO_REVENUE
+      - name: LO_SUPPLYCOST
+      - name: LO_TAX
+      - name: LO_COMMITDATE
+      - name: LO_SHIPMODE
+    tests:
+      - dbt_utils.equal_rowcount:
+          compare_model: ref('lineorder')

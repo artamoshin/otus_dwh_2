@@ -1,0 +1,67 @@
+version: 2
+
+models:
+  - name: customer
+    columns:
+      - name: C_CUSTKEY
+        tests:
+          - unique
+          - not_null
+      - name: C_NAME
+      - name: C_ADDRESS
+      - name: C_CITY
+      - name: C_NATION
+      - name: C_REGION
+      - name: C_PHONE
+      - name: C_MKTSEGMENT
+        tests:
+          - accepted_values:
+              values: ['AUTOMOBILE', 'BUILDING', 'FURNITURE', 'HOUSEHOLD', 'MACHINERY']
+
+  - name: lineorder
+    columns:
+      - name: LO_ORDERKEY
+      - name: LO_LINENUMBER
+      - name: LO_CUSTKEY
+      - name: LO_PARTKEY
+      - name: LO_SUPPKEY
+      - name: LO_ORDERDATE
+      - name: LO_ORDERPRIORITY
+      - name: LO_SHIPPRIORITY
+      - name: LO_QUANTITY
+      - name: LO_EXTENDEDPRICE
+      - name: LO_ORDTOTALPRICE
+      - name: LO_DISCOUNT
+      - name: LO_REVENUE
+      - name: LO_SUPPLYCOST
+      - name: LO_TAX
+      - name: LO_COMMITDATE
+      - name: LO_SHIPMODE
+
+  - name: part
+    columns:
+      - name: P_PARTKEY
+        tests:
+          - unique
+          - not_null
+      - name: P_NAME
+      - name: P_MFGR
+      - name: P_CATEGORY
+      - name: P_BRAND
+      - name: P_COLOR
+      - name: P_TYPE
+      - name: P_SIZE
+      - name: P_CONTAINER
+
+  - name: supplier
+    columns:
+      - name: S_SUPPKEY
+        tests:
+          - unique
+          - not_null
+      - name: S_NAME
+      - name: S_ADDRESS
+      - name: S_CITY
+      - name: S_NATION
+      - name: S_REGION
+      - name: S_PHONE

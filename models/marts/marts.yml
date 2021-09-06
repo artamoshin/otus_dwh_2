@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: q2_1
+    description: "This is result of query Q2.1 (https://clickhouse.tech/docs/en/getting-started/example-datasets/star-schema/)"
+    columns:
+      - name: sum_LO_REVENUE
+      - name: year
+      - name: P_BRAND
+
+  - name: q3_3
+    description: "This is result of query Q3.3 (https://clickhouse.tech/docs/en/getting-started/example-datasets/star-schema/)"
+    columns:
+      - name: C_CITY
+      - name: S_CITY
+      - name: year
+      - name: revenue
+
+  - name: q4_2
+    description: "This is result of query Q4.2 (https://clickhouse.tech/docs/en/getting-started/example-datasets/star-schema/)"
+    columns:
+      - name: year
+      - name: S_NATION
+      - name: P_CATEGORY
+      - name: profit
