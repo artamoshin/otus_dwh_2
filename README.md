@@ -4,7 +4,12 @@
 Описание задания: https://gist.github.com/kzzzr/8d50126079df1a8e5646342f6247df22
 
 ### Создание кластера
-Осуществляется скриптом `tools/create_clickhouse_cluster.sh`
+Осуществляется скриптом `tools/create_clickhouse_cluster.sh`, либо при помощи Terraform:
+```
+cd tools/yandex-cloud-terraform
+terraform init
+terraform apply
+```
 
 ### Модель данных
 ![Lineage Graph](graph.png)
