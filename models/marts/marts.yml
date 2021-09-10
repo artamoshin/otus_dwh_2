@@ -7,6 +7,8 @@ models:
       - name: sum_LO_REVENUE
       - name: year
       - name: P_BRAND
+    tests:
+      - dbt_utils.at_least_one
 
   - name: q3_3
     description: "This is result of query Q3.3 (https://clickhouse.tech/docs/en/getting-started/example-datasets/star-schema/)"
@@ -15,6 +17,8 @@ models:
       - name: S_CITY
       - name: year
       - name: revenue
+    tests:
+      - dbt_utils.at_least_one
 
   - name: q4_2
     description: "This is result of query Q4.2 (https://clickhouse.tech/docs/en/getting-started/example-datasets/star-schema/)"
@@ -23,3 +27,5 @@ models:
       - name: S_NATION
       - name: P_CATEGORY
       - name: profit
+    tests:
+      - dbt_utils.at_least_one
