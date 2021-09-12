@@ -12,7 +12,7 @@
             C_PHONE         String,
             C_MKTSEGMENT    LowCardinality(String)
         )
-        ENGINE = S3('https://storage.yandexcloud.net/otus-dwh/dbgen/customer.tbl', 'CSV');
+        ENGINE = S3('https://storage.yandexcloud.net/dwh-cloud/dbgen/customer.tbl', 'CSV');
 
         DROP TABLE IF EXISTS {{ schema }}.src_lineorder;
         CREATE TABLE {{ schema }}.src_lineorder (
@@ -34,7 +34,7 @@
             LO_COMMITDATE           Date,
             LO_SHIPMODE             LowCardinality(String)
         )
-        ENGINE = S3('https://storage.yandexcloud.net/otus-dwh/dbgen/lineorder.tbl', 'CSV');
+        ENGINE = S3('https://storage.yandexcloud.net/dwh-cloud/dbgen/lineorder.tbl', 'CSV');
 
         DROP TABLE IF EXISTS {{ schema }}.src_part;
         CREATE TABLE {{ schema }}.src_part (
@@ -48,7 +48,7 @@
             P_SIZE          UInt8,
             P_CONTAINER     LowCardinality(String)
         )
-        ENGINE = S3('https://storage.yandexcloud.net/otus-dwh/dbgen/part.tbl', 'CSV');
+        ENGINE = S3('https://storage.yandexcloud.net/dwh-cloud/dbgen/part.tbl', 'CSV');
 
         DROP TABLE IF EXISTS {{ schema }}.src_supplier;
         CREATE TABLE {{ schema }}.src_supplier (
@@ -60,7 +60,7 @@
             S_REGION        LowCardinality(String),
             S_PHONE         String
         )
-        ENGINE = S3('https://storage.yandexcloud.net/otus-dwh/dbgen/supplier.tbl', 'CSV');
+        ENGINE = S3('https://storage.yandexcloud.net/dwh-cloud/dbgen/supplier.tbl', 'CSV');
     {% endset %}
 
     {% for query in sql.split(';') if query.strip() %}

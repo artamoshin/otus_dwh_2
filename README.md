@@ -20,7 +20,7 @@ terraform apply
 - не работает генерация моделей при помощи пакета codegen
 
 Требуется заведение issue в соответствующих проектах. Workaround:
-- Ошибка `0.0 is not of type 'boolean'` в тестах unique, not_null:
+- Ошибка `0.0 is not of type 'boolean'` в тестах unique, not_null (https://github.com/dbt-labs/dbt/issues/3872):
   - закомментировать `TestResultData.validate(test_result_dct)` в `dbt/task/test.py:108`  
     (проверка на соответствие схеме, ClickHouse не поддерживает тип boolean)
 
