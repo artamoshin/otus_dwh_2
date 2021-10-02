@@ -69,3 +69,5 @@ terraform apply
     {% endmacro %}
     ```
   
+- Тесты relationships не обнаруживают некорректные внешние ключи
+  - Задать настройку ClickHouse join_use_nulls = 1

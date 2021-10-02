@@ -23,8 +23,20 @@ models:
       - name: LO_ORDERKEY
       - name: LO_LINENUMBER
       - name: LO_CUSTKEY
+        tests:
+          - relationships:
+              to: ref('customer')
+              field: C_CUSTKEY
       - name: LO_PARTKEY
+        tests:
+          - relationships:
+              to: ref('part')
+              field: P_PARTKEY
       - name: LO_SUPPKEY
+        tests:
+          - relationships:
+              to: ref('supplier')
+              field: S_SUPPKEY
       - name: LO_ORDERDATE
       - name: LO_ORDERPRIORITY
       - name: LO_SHIPPRIORITY
